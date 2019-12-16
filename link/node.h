@@ -8,18 +8,18 @@
 
 using namespace std;
 
-class node{
+class Node{
  public: //public functions
-  node(); //constructor
-  ~node(); //destructor 
-  void setstudent(student* user); //set new student, sets "newstudent" = "user"
-  student* getstudent(); //get student pointer, returns "newstudent"
-  void setnext(node* user); //set where node points to
-  node* getnext(); //get the node pointer, returns "next"
+  Node(); //constructor
+  ~Node(); //destructor 
+  void setStudent(Student* user); //set new student, sets "newstudent" = "user"
+  Student* getStudent(); //get student pointer, returns "newstudent"
+  void setNext(Node* user); //set where node points to
+  Node* getNext(); //get the node pointer, returns "next"
   
  private:
-  student* newstudent;
-  node* next;
+  Student* newstudent;
+  Node* next;
 };
 
 #endif

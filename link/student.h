@@ -6,21 +6,21 @@
 
 using namespace std;
 
-class student{
+class Student{
  public:
   ///*
-  student(/*char* setname*/);
-  ~student();
+  Student();
+  ~Student();
   //*/
-  char* getname(); //get student name
-  char* setname(char* user); //set student name
+  char* getName(); //get student name
+  char* setName(char* user); //set student name
   
-  float getgpa(); //get student gpa
-  void setgpa(int user); //set student gpa
+  float getGpa(); //get student gpa
+  void setGpa(int user); //set student gpa
   //*/
   
-  int getid(); //get student id
-  void setid(int user); //set student id
+  int getId(); //get student id
+  void setId(int user); //set student id
 
  private:
   char* name;

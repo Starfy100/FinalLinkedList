@@ -4,30 +4,30 @@
 
 using namespace std;
 
-node::node(){
+Node::Node(){
   newstudent = NULL;
   next = NULL;
 }
 
-node::~node(){
+Node::~Node(){
   delete &newstudent;
   next = NULL;
 }
 
 ///*
-void node::setstudent(student* user){
+void Node::setStudent(Student* user){
  newstudent = user;
 }
 
-student* node::getstudent(){
+Student* Node::getStudent(){
   return newstudent;
 }
 //*/
 
-void node::setnext(node* user){
+void Node::setNext(Node* user){
   next = user;
 }
 
-node* node::getnext(){
+Node* Node::getNext(){
   return next;
 }

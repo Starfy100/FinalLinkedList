@@ -5,31 +5,31 @@ using namespace std;
 ///*
 
 ///*
-student::student(){
+Student::Student(){
 }
-student::~student(){
+Student::~Student(){
   delete name;
 }
 //*/
-char* student::getname(){
+char* Student::getName(){
   return name;
 }
-char* student::setname(char* user){
+char* Student::setName(char* user){
   name = user;
 }
 
-float student::getgpa(){
+float Student::getGpa(){
   return gpa;
 }
-void student::setgpa(int user){
+void Student::setGpa(int user){
   gpa = user;
 }
 
 //*/
 
-int student::getid(){
+int Student::getId(){
   return id;
 }
-void student::setid(int user){
+void Student::setId(int user){
   id = user;
 }

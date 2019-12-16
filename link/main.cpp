@@ -1,4 +1,5 @@
 #include <iostream>
+#include <iomanip>
 #include "node.h"
 #include "student.h"
 
@@ -16,50 +17,50 @@
 
 using namespace std;
 
-node* head = NULL;
+Node* head = NULL;
 
 void addstudent(char* name, int id, float gpa) {
   //method to add a student
   //method also adds students based on id number (not implemented)
 
   //node* head = NULL;
-  node* current = head;  
+  Node* current = head;  
   int userid;
   char* username = new char[15];
   float usergpa;
-  student* newstudent = new student();
+  Student* newstudent = new Student();
   //asks and then records name, id and gpa
   cout << "enter name:" << endl; 
   cin >> username;
   cin.get();
   name = username;
-  newstudent->setname(name);
+  newstudent->setName(name);
 
   cout << "enter id:" << endl;
   cin >> userid;
   cin.get();
   id = userid;
-  newstudent->setid(id);
+  newstudent->setId(id);
 
   cout << "enter gpa:" << endl;
   cin >> usergpa;
   cin.get();
   gpa = usergpa;
-  newstudent->setgpa(gpa);
+  newstudent->setGpa(gpa);
 
     
   if (current == NULL) {
-    head = new node();
+    head = new Node();
     //head = new student();
-    head->setstudent(newstudent);
+    head->setStudent(newstudent);
   }
   else {
-    while (current->getnext() != NULL) {
-      current = current->getnext();
+    while (current->getNext() != NULL) {
+      current = current->getNext();
     }
-    current->setnext(new node());
+    current->setNext(new Node());
     //current->setnext(new student());
-    current->getnext()->setstudent(newstudent);
+    current->getNext()->setStudent(newstudent);
   }
   
 }
@@ -69,7 +70,7 @@ void deletestudent() { //method to delete a student (not implemented)
     
 }
 
-void printstudent(node* next) { //method to print all students
+void printstudent(Node* next) { //method to print all students
   //  node* head = NULL;
   //  cout << "1st if statement" << endl;
   if (next == head) {
@@ -77,11 +78,11 @@ void printstudent(node* next) { //method to print all students
   }
   // cout << "2nd if statement" << endl;
   if (next != NULL) {
-    cout << next->getstudent()->getname() << " ";
-    cout << next->getstudent()->getid() << " ";
-    cout << next->getstudent()->getgpa() << " ";
+    cout << next->getStudent()->getName() << " ";
+    cout << next->getStudent()->getId() << " ";
+    cout << fixed << setprecision(2) << next->getStudent()->getGpa() << " ";
     cout << endl;
-    printstudent(next->getnext());
+    printstudent(next->getNext());
   } 
 }
 
