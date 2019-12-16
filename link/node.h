@@ -10,7 +10,7 @@ using namespace std;
 
 class Node{
  public: //public functions
-  Node(); //constructor
+  Node(Student* user); //constructor
   ~Node(); //destructor 
   void setStudent(Student* user); //set new student, sets "newstudent" = "user"
   Student* getStudent(); //get student pointer, returns "newstudent"

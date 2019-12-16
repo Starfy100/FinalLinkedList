@@ -4,7 +4,7 @@
 
 using namespace std;
 
-Node::Node(){
+Node::Node(Student* user){
   newstudent = NULL;
   next = NULL;
 }

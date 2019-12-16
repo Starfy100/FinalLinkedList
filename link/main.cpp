@@ -50,15 +50,19 @@ void addstudent(char* name, int id, float gpa) {
 
     
   if (current == NULL) {
-    head = new Node();
+    head = new Node(newstudent);
     //head = new student();
     head->setStudent(newstudent);
   }
   else {
     while (current->getNext() != NULL) {
-      current = current->getNext();
+      //  if (Next()->getStudent()->getId() > userid) {
+	
+      // }
+
+       current = current->getNext();
     }
-    current->setNext(new Node());
+    current->setNext(new Node(newstudent));
     //current->setnext(new student());
     current->getNext()->setStudent(newstudent);
   }
@@ -66,7 +70,10 @@ void addstudent(char* name, int id, float gpa) {
 }
 
 void deletestudent() { //method to delete a student (not implemented)
+  int user3[15];
   cout << "which student do you want to remove? (enter id)" << endl;
+
+  
     
 }
 
@@ -88,7 +95,7 @@ void printstudent(Node* next) { //method to print all students
 
 void averagegpa(){ // (not implemented)
  //method to average the gpa's of all recorded students
-
+  float total;
 
   
 
