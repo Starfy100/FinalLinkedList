@@ -62,7 +62,7 @@ void addstudent(char* name, int id, float gpa) {
     // while (current->getNext() != NULL) {
     
     if (current->getStudent()->getId() > userid) {
-      //if the head is greater than the new student
+      //if the node is greater than the new student
       //put the new student before it
       temp = current; 
       head = new Node(newstudent);
@@ -70,30 +70,45 @@ void addstudent(char* name, int id, float gpa) {
       head->setNext(temp);
     }
     if (current->getStudent()->getId() < userid) {
+      //if the node is less than the new student
+      //put the new student after it
       temp = new Node(newstudent);
       temp->setStudent(newstudent);
       
       head->setNext(temp);
-      //temp->setNext()
+      //temp->setNext();
     }
     
     
   }
   
-
-  else {
-  /*
+  
+  else if (current->getNext() != NULL) {
+    ///*
     
-    while (current->getNext()->getStudent()->getId() > userid && current->getNext()->getNext()->getStudent()->getId() > userid) {
-    
-    //}
-    
-    current = current->getNext();
+    if (current->getStudent()->getId() > userid) {
+      //if the curent is greater
+      //put new student before
+      temp = current; 
+      head = new Node(newstudent);
+      head->setStudent(newstudent);
+      head->setNext(temp);
+      
     }
+    if (current->getStudent()->getId() < userid && current->getNext()->getStudent()->getId() > userId) {
+      //if the current is smaller and the next is larger
+      //new student goes in between
+      
+    }
+    if (current->getStudent()->getId() < userid && current->getNext()->getStudent()->getId() < userId) {
+      current = current->getNext();
+    }
+    
+  }
 
-    current->setNext(new Node(newstudent));
+  //current->setNext(new Node(newstudent));
     //current->setnext(new student());
-    current->getNext()->setStudent(newstudent);
+    //current->getNext()->setStudent(newstudent);
     
     }
     // */
@@ -133,7 +148,12 @@ void averagegpa(){ // (not implemented)
 
   
   
+  
   cout << "Average GPA: " << total << endl;
+
+
+
+  
 }
 
 int main() {
