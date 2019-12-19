@@ -24,11 +24,14 @@ void addstudent(char* name, int id, float gpa) {
   //method also adds students based on id number (not implemented)
 
   //node* head = NULL;
-  Node* current = head;  
+  Node* current = head;
+  Node* temp = NULL;
+  
   int userid;
   char* username = new char[15];
   float usergpa;
   Student* newstudent = new Student();
+  Student* oldstudent = new Student();
   //asks and then records name, id and gpa
   cout << "enter name:" << endl; 
   cin >> username;
@@ -54,19 +57,47 @@ void addstudent(char* name, int id, float gpa) {
     //head = new student();
     head->setStudent(newstudent);
   }
-  else {
-    while (current->getNext() != NULL) {
-      //  if (Next()->getStudent()->getId() > userid) {
-	
-      // }
-
-       current = current->getNext();
+  
+  else if (current->getNext() == NULL) {
+    // while (current->getNext() != NULL) {
+    
+    if (current->getStudent()->getId() > userid) {
+      //if the head is greater than the new student
+      //put the new student before it
+      temp = current; 
+      head = new Node(newstudent);
+      head->setStudent(newstudent);
+      head->setNext(temp);
     }
+    if (current->getStudent()->getId() < userid) {
+      temp = new Node(newstudent);
+      temp->setStudent(newstudent);
+      
+      head->setNext(temp);
+      //temp->setNext()
+    }
+    
+    
+  }
+  
+
+  else {
+  /*
+    
+    while (current->getNext()->getStudent()->getId() > userid && current->getNext()->getNext()->getStudent()->getId() > userid) {
+    
+    //}
+    
+    current = current->getNext();
+    }
+
     current->setNext(new Node(newstudent));
     //current->setnext(new student());
     current->getNext()->setStudent(newstudent);
+    
+    }
+    // */
   }
-  
 }
 
 void deletestudent() { //method to delete a student (not implemented)
@@ -81,7 +112,7 @@ void printstudent(Node* next) { //method to print all students
   //  node* head = NULL;
   //  cout << "1st if statement" << endl;
   if (next == head) {
-    cout << "list: ";
+    cout << "list: " << endl;
   }
   // cout << "2nd if statement" << endl;
   if (next != NULL) {
@@ -96,9 +127,13 @@ void printstudent(Node* next) { //method to print all students
 void averagegpa(){ // (not implemented)
  //method to average the gpa's of all recorded students
   float total;
+  int n; //number of numbers
+  //for each student in the chain, take gpa and add it to "total", increment "n" for each student
+  //after all students are accounted for, divide it by "n"
 
   
-
+  
+  cout << "Average GPA: " << total << endl;
 }
 
 int main() {
