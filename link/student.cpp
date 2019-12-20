@@ -21,7 +21,7 @@ char* Student::setName(char* user){
 float Student::getGpa(){
   return gpa;
 }
-void Student::setGpa(int user){
+void Student::setGpa(float user){
   gpa = user;
 }
 
