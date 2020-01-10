@@ -17,7 +17,12 @@ char* Student::getName(){
 char* Student::setName(char* user){
   name = user;
 }
-
+char* Student::getLName(){
+  return lname;
+}
+char* Student::setLName(char* user){
+  lname = user;
+}
 float Student::getGpa(){
   return gpa;
 }

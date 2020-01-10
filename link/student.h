@@ -14,7 +14,8 @@ class Student{
   //*/
   char* getName(); //get student name
   char* setName(char* user); //set student name
-  
+  char* getLName(); //get student last name
+  char* setLName(char* user); //set student last name
   float getGpa(); //get student gpa
   void setGpa(float user); //set student gpa
   //*/
@@ -24,6 +25,7 @@ class Student{
 
  private:
   char* name;
+  char* lname;
   float gpa;
   int id;
 };
